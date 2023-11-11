@@ -52,7 +52,7 @@ Error mod(int a, int b, int* res) {
 
 Error fac(int a, int* res) {
     if (a < 0) {
-        return NEG_NUMBER_ERROR;
+        return FACTORIAL_NEG_NUMBER;
     }
     long temp = 1;
     int r;
@@ -67,6 +67,9 @@ Error fac(int a, int* res) {
 }
 
 Error expo(int a, int b, int* res) {
+    if (b < 0) {
+        return POW_NEG_NUMBER;
+    }
     double r = pow(a, b);
     *res = r;
     if (r != *res) {

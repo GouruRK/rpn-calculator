@@ -99,30 +99,18 @@ Error reverse_head(Stack* st) {
 }
 
 void print_err(Error err) {
-    fprintf(stderr, "rpn: ");
-    switch (err) {
-        case DIV_ERROR:
-            fprintf(stderr, "divide by 0\n");
-            break;
-        case MEMORY_ERROR:
-            fprintf(stderr, "error while allocating memory\n");
-            break;
-        case INT_OVERFLOW:
-            fprintf(stderr, "int overflow\n");
-            break;
-        case NEG_NUMBER_ERROR:
-            fprintf(stderr, "factorial of negative number\n");
-            break;
-        case NON_NUMERIC_VALUE:
-            fprintf(stderr, "unrecognized token\n");
-            break;
-        case EMPTY_STACK:
-            fprintf(stderr, "stack empty\n");
-            break;
-        case UNKNOWN_OPERATOR:
-            fprintf(stderr, "unknown operator\n");
-            break;
-        default:
-            fprintf(stderr, "unknown error\n");
-    }
+
+    static char* message[] = {
+        "can't compute division by 0",
+        "error while allocating memory",
+        "int overflow",
+        "can't compute factorial of negative number",
+        "can't compute pow of negative number",
+        "non numeric value",
+        "empty stack",
+        "unknown error"
+    };
+
+    fprintf(stderr, "rpn: %s\n", message[err]);
+    
 }

@@ -11,11 +11,12 @@ typedef enum {
     DIV_ERROR,
     MEMORY_ERROR,
     INT_OVERFLOW,
-    NEG_NUMBER_ERROR,
+    FACTORIAL_NEG_NUMBER,
+    POW_NEG_NUMBER,
     NON_NUMERIC_VALUE,
     EMPTY_STACK,
-    EXIT,
     UNKNOWN_OPERATOR,
+    EXIT,
     OK
 } Error;
 
